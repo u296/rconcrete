@@ -1,6 +1,6 @@
 # rconcrete
 
-Rconcrete is a simple utility for opening an rcon shell to a server.
+Rconcrete is a simple utility for opening an rcon shell to a game server, such as minecraft.
 
 ## Example usage:
 
