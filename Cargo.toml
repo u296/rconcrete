@@ -1,6 +1,7 @@
 [package]
 name = "rconcrete"
 version = "0.1.0"
+authors = ["u296"]
 edition = "2021"
 rust-version = "1.64.0"
 description = "rconcrete is a simple tool for opening an rcon shell to a game server, such as minecraft or factorio"
