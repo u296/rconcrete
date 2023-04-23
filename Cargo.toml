@@ -6,7 +6,7 @@ rust-version = "1.64.0"
 description = "rconcrete is a simple tool for opening an rcon shell to a game server, such as minecraft or factorio"
 readme = "README.md"
 repository = "https://github.com/u296/rconcrete"
-license = "0BSD"
+license = "MIT"
 keywords = ["rcon", "tool", "cli", "minecraft", "server"]
 categories = ["cli"]
 
