@@ -1,7 +1,7 @@
 #[derive(thiserror::Error, Debug)]
 pub enum Error {
-    #[error("the server does not exist")]
-    ServerDoesNotExist,
+    #[error("none of the specified servers exist")]
+    NoServersExisted,
     #[error("the server already exists")]
     ServerAlreadyExists,
     #[error("connection error: {0}")]

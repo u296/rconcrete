@@ -16,7 +16,7 @@ pub async fn run(args: ConnectArgs, config: Configuration) -> Result<(), Error> 
         .known_servers
         .iter()
         .find(|server| server.name == args.server)
-        .ok_or(Error::ServerDoesNotExist)?;
+        .ok_or(Error::NoServersExisted)?;
 
     let address = &target.address;
 

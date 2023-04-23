@@ -75,7 +75,8 @@ pub fn run_add(args: AddArgs, config_file: ConfigurationFile) -> Result<(), Erro
 
 #[derive(Parser)]
 pub struct RemoveArgs {
-    name: String,
+    #[arg(num_args = 1..)]
+    names: Vec<String>,
 }
 
 pub fn run_remove(args: RemoveArgs, config_file: ConfigurationFile) -> Result<(), Error> {
@@ -84,7 +85,7 @@ pub fn run_remove(args: RemoveArgs, config_file: ConfigurationFile) -> Result<()
     let mut found = false;
 
     config.known_servers.retain(|known_server| {
-        if known_server.name != args.name {
+        if !args.names.contains(&known_server.name) {
             true
         } else {
             found = true;
@@ -93,7 +94,7 @@ pub fn run_remove(args: RemoveArgs, config_file: ConfigurationFile) -> Result<()
     });
 
     if !found {
-        return Err(Error::ServerDoesNotExist);
+        return Err(Error::NoServersExisted);
     }
 
     config_file.write(&config)
